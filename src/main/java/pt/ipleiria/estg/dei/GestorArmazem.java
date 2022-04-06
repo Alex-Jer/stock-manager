@@ -6,6 +6,6 @@ import java.util.ArrayList;
 
 public class GestorArmazem {
 
-    private ArrayList<Produto> produto;
+    private ArrayList<Produto> produtos;
 
 }
