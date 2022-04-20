@@ -16,7 +16,7 @@ public class AdicionarProduto extends JFrame {
     private JButton btnVoltar;
     private JComboBox cmbCategoria;
 
-    public static void main(String[] args) {
+    public void display() {
         JFrame frame = new JFrame("Adicionar Produto");
         frame.setContentPane(new AdicionarProduto().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,6 +25,7 @@ public class AdicionarProduto extends JFrame {
     }
     
     public AdicionarProduto() {
+        display();
         for (Categoria categoria : Categoria.values())
             cmbCategoria.addItem(categoria);
         
