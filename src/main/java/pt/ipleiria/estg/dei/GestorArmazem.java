@@ -29,7 +29,7 @@ public class GestorArmazem {
         produtos.add(produto);
     }
 
-    public void inserirDadosExemplo(){
+    public void inserirDadosExemplo() {
         produtos.add(new Produto("Lapis Lazuli", Categoria.PRODUTOS_ANIMAIS, 10, 30));
         produtos.add(new Produto("Cadeira Gaymer Madrux", Categoria.MOBILIA, 5, 18));
         produtos.add(new Produto("Manual de SI", Categoria.LIVROS, 20, 0));

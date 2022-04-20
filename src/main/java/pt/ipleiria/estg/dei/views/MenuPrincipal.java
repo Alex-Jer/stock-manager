@@ -23,12 +23,9 @@ public class MenuPrincipal {
     }
 
     public MenuPrincipal() {
-        btnChefe.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new AdicionarProduto();
-                new EditarProduto(GestorArmazem.INSTANCE.getProdutos().get(0));
-            }
+        btnChefe.addActionListener(e -> {
+            new AdicionarProduto();
+            new EditarProduto(GestorArmazem.INSTANCE.getProdutos().get(0));
         });
     }
 }
