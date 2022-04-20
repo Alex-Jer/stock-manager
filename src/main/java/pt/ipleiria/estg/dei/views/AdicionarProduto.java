@@ -19,17 +19,17 @@ public class AdicionarProduto extends JFrame {
     public void display() {
         JFrame frame = new JFrame("Adicionar Produto");
         frame.setContentPane(this.panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
-    
+
     public AdicionarProduto() {
         for (Categoria categoria : Categoria.values())
             cmbCategoria.addItem(categoria);
 
         display();
-        
+
         btnAdicionarProduto.addActionListener(e -> {
             double peso;
             int stock;

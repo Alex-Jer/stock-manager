@@ -1,5 +1,7 @@
 package pt.ipleiria.estg.dei.views;
 
+import pt.ipleiria.estg.dei.GestorArmazem;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +14,7 @@ public class MenuPrincipal {
     private JButton btnSair;
 
     public static void main(String[] args) {
+        GestorArmazem.INSTANCE.inserirDadosExemplo();
         JFrame frame = new JFrame("Menu Principal");
         frame.setContentPane(new MenuPrincipal().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,9 +26,9 @@ public class MenuPrincipal {
         btnChefe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                new AdicionarProduto();
+                new EditarProduto(GestorArmazem.INSTANCE.getProdutos().get(0));
             }
         });
     }
-
 }

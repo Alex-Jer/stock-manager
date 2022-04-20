@@ -12,15 +12,15 @@ public class EditarProduto extends JFrame {
     private JButton btnConfirmar;
     private JButton btnVoltar;
 
-    public void display(){
+    public void display() {
         JFrame frame = new JFrame("Editar Produto");
         frame.setContentPane(this.panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
 
-    public EditarProduto(Produto produto)  {
+    public EditarProduto(Produto produto) {
         txtStock.setText(Integer.toString(produto.getStock()));
         display();
         btnConfirmar.addActionListener(e -> {
@@ -34,7 +34,7 @@ public class EditarProduto extends JFrame {
             }
 
             produto.setStock(stock);
-            JOptionPane.showMessageDialog(null,"Stock de " + produto.getNome() + " definido para " + stock + "!");
+            JOptionPane.showMessageDialog(null, "Stock de " + produto.getNome() + " definido para " + stock + "!");
         });
     }
 }
