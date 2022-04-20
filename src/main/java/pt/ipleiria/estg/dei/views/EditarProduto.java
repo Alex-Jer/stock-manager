@@ -21,6 +21,7 @@ public class EditarProduto extends JFrame {
     }
 
     public EditarProduto(Produto produto)  {
+        txtStock.setText(Integer.toString(produto.getStock()));
         display();
         btnConfirmar.addActionListener(e -> {
             int stock;

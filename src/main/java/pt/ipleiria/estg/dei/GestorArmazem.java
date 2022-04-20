@@ -1,5 +1,6 @@
 package pt.ipleiria.estg.dei;
 
+import pt.ipleiria.estg.dei.models.Categoria;
 import pt.ipleiria.estg.dei.models.Produto;
 import pt.ipleiria.estg.dei.models.Utilizador;
 
@@ -26,5 +27,11 @@ public class GestorArmazem {
 
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
+    }
+
+    public void inserirDadosExemplo(){
+        produtos.add(new Produto("Lapis Lazuli", Categoria.PRODUTOS_ANIMAIS, 10, 30));
+        produtos.add(new Produto("Cadeira Gaymer Madrux", Categoria.MOBILIA, 5, 18));
+        produtos.add(new Produto("Manual de SI", Categoria.LIVROS, 20, 0));
     }
 }

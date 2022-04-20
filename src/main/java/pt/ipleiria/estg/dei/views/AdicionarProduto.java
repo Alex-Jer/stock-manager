@@ -25,9 +25,10 @@ public class AdicionarProduto extends JFrame {
     }
     
     public AdicionarProduto() {
-        display();
         for (Categoria categoria : Categoria.values())
             cmbCategoria.addItem(categoria);
+
+        display();
         
         btnAdicionarProduto.addActionListener(e -> {
             double peso;
