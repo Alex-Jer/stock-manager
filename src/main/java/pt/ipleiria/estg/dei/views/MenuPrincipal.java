@@ -1,6 +1,8 @@
 package pt.ipleiria.estg.dei.views;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MenuPrincipal {
     private JButton btnFuncionario;
@@ -16,4 +18,14 @@ public class MenuPrincipal {
         frame.pack();
         frame.setVisible(true);
     }
+
+    public MenuPrincipal() {
+        btnChefe.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+    }
+
 }
