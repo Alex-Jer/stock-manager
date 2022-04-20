@@ -1,5 +1,7 @@
 package pt.ipleiria.estg.dei.views;
 
+import pt.ipleiria.estg.dei.models.Produto;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,13 +14,13 @@ public class EditarProduto extends JFrame {
 
     public void display(){
         JFrame frame = new JFrame("Editar Produto");
-        frame.setContentPane(new EditarProduto().panel1);
+        frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
 
-    public EditarProduto()  {
+    public EditarProduto(Produto produto)  {
         display();
         btnConfirmar.addActionListener(e -> {
             int stock;
@@ -30,7 +32,8 @@ public class EditarProduto extends JFrame {
                 return;
             }
 
-
+            produto.setStock(stock);
+            JOptionPane.showMessageDialog(null,"Stock de " + produto.getNome() + " definido para " + stock + "!");
         });
     }
 }

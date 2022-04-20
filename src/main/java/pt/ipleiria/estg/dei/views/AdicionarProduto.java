@@ -18,7 +18,7 @@ public class AdicionarProduto extends JFrame {
 
     public void display() {
         JFrame frame = new JFrame("Adicionar Produto");
-        frame.setContentPane(new AdicionarProduto().panel1);
+        frame.setContentPane(this.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
