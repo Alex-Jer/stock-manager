@@ -5,8 +5,6 @@ import pt.ipleiria.estg.dei.models.Categoria;
 import pt.ipleiria.estg.dei.models.Produto;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AdicionarProduto extends JFrame {
     private JPanel panel1;

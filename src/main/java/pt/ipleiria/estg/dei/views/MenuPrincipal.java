@@ -9,7 +9,11 @@ public class MenuPrincipal {
     private JButton btnChefe;
     private JButton btnSair;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here 
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Menu Principal");
+        frame.setContentPane(new MenuPrincipal().panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }
