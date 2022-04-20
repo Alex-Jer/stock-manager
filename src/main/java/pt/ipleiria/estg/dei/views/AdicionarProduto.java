@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdicionarProduto {
+public class AdicionarProduto extends JFrame {
     private JPanel panel1;
     private JTextField txtNome;
     private JTextField txtCategoria;
@@ -18,36 +18,46 @@ public class AdicionarProduto {
     private JButton btnVoltar;
     private JComboBox cmbCategoria;
 
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Adicionar Produto");
+        frame.setContentPane(new AdicionarProduto().panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+    
     public AdicionarProduto() {
-        for (Categoria categoria : Categoria.values()) {
+        for (Categoria categoria : Categoria.values())
             cmbCategoria.addItem(categoria);
-        }
-        btnAdicionarProduto.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                double peso = 0.0;
-                try {
-                    peso = Double.parseDouble(txtPeso.getText());
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Peso inválido");
-                }
+        
+        btnAdicionarProduto.addActionListener(e -> {
+            double peso;
+            int stock;
 
-                int stock = 0;
-                try {
-                    stock = Integer.parseInt(txtStock.getText());
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Stock inválido");
-                }
-
-                Produto produto = new Produto(
-                        txtNome.getText(),
-                        (Categoria) cmbCategoria.getItemAt(cmbCategoria.getSelectedIndex()),
-                        peso,
-                        stock
-                );
-                
-                GestorArmazem.INSTANCE.adicionarProduto(produto);
+            try {
+                peso = Double.parseDouble(txtPeso.getText());
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Peso inválido");
+                return;
             }
+
+            try {
+                stock = Integer.parseInt(txtStock.getText());
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Stock inválido");
+                return;
+            }
+
+            Produto produto = new Produto(
+                    txtNome.getText(),
+                    (Categoria) cmbCategoria.getItemAt(cmbCategoria.getSelectedIndex()),
+                    peso,
+                    stock
+            );
+
+            GestorArmazem.INSTANCE.adicionarProduto(produto);
+            JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso");
+            JOptionPane.showMessageDialog(null, "Nome: " + produto.getNome() + " Categoria: " + produto.getCategoria() + " Peso: " + produto.getPeso() + " Stock: " + produto.getStock());
         });
     }
 }
